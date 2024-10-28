@@ -3,7 +3,7 @@ import { type Preview, setup } from '@storybook/vue3'
 import PrimeVue from 'primevue/config'
 import { fn } from '@storybook/test';
 setup((app) => {
-  app.use(PrimeVue)
+  app.use(PrimeVue,{ unstyled: true })
 })
 
 const preview: Preview = {
