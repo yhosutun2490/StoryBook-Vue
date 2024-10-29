@@ -1,6 +1,5 @@
 <template>
   <Paginator 
-  class="paginator"
   :pt="{
     root: {
       style: `
@@ -13,22 +12,30 @@
     next: 'paginator-button next',
     last: 'd-none',
     pages: 'custom-pages-link',
-    page: 'custom-page-link'
-   
+    page: 'custom-page-link',
+    current: 'current-active',
+    contentEnd: 'content-end' 
   }"
   :totalRecords="totalRecords"
   :rows="rows"
   :pageLinkSize="pageLinkSize"
-  ></Paginator>
+   v-model:currentPage="currentPageNumber"
+   v-model:rows="currentRowsNumber"
+  >
+  <template #end>
+    目前 {{ currentPageNumber }}
+  </template>
+  
+  </Paginator>
 </template>
 <script setup>
 import Paginator from 'primevue/paginator';
-import { defineProps } from "vue";
+import { defineProps,ref } from "vue";
 
 defineProps({
   totalRecords: {
     type: Number,
-    default: 15
+    default: 30
   },
   rows:  {
     type: Number,
@@ -40,6 +47,10 @@ defineProps({
   }
 
 })
+
+const currentPageNumber = ref('')
+const currentRowsNumber = ref('')
+
 </script>
 
 <style lang="scss">
@@ -87,6 +98,13 @@ defineProps({
 .next {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
+}
+.current-active {
+  background: green;
+}
+.content-end {
+  width: fit-content;
+  margin-left: auto;
 }
 </style>
 
