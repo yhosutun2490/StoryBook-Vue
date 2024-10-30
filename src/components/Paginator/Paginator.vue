@@ -1,5 +1,6 @@
 <template>
-  <Paginator 
+  <Paginator
+  ref="paginator" 
   :pt="{
     root: {
       style: `
@@ -13,29 +14,29 @@
     last: 'd-none',
     pages: 'custom-pages-link',
     page: 'custom-page-link',
-    current: 'current-active',
-    contentEnd: 'content-end' 
+    contentEnd: 'content-end', 
   }"
   :totalRecords="totalRecords"
   :rows="rows"
   :pageLinkSize="pageLinkSize"
-   v-model:currentPage="currentPageNumber"
-   v-model:rows="currentRowsNumber"
   >
-  <template #end>
-    目前 {{ currentPageNumber }}
+  <template #end="slotProps">
+    <div v-if="(updatePaginatorState(slotProps.state))">
+      目前 {{slotProps.state.page + 1}} 共 {{ totalPage }} 頁
+    </div>
+   
   </template>
   
   </Paginator>
 </template>
 <script setup>
 import Paginator from 'primevue/paginator';
-import { defineProps,ref } from "vue";
+import { defineProps, computed, ref, defineEmits } from "vue";
 
-defineProps({
+const props = defineProps({
   totalRecords: {
     type: Number,
-    default: 30
+    default: 25
   },
   rows:  {
     type: Number,
@@ -48,12 +49,17 @@ defineProps({
 
 })
 
-const currentPageNumber = ref('')
-const currentRowsNumber = ref('')
+const emits = defineEmits(['currentPage'])
+const paginator = ref(null)
+const totalPage = computed(()=> Math.ceil(props.totalRecords / props.rows))
+function updatePaginatorState(state) {
+  emits('currentPage',state.page + 1)
 
+}
 </script>
 
 <style lang="scss">
+ $border-color: rgba(196, 196, 196, 1);
 .paginator-warp {
   border: none; 
   width: fit-content; 
@@ -63,12 +69,12 @@ const currentRowsNumber = ref('')
 
   & > :first-child {
     border: none;
-    border-left: 1px solid grey;
-    border-right: 1px solid grey;
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
   }
   & > * {
     border: none;
-    border-right: 1px solid grey;
+    border-right: 1px solid $border-color;
   }
 }
 .custom-page-link {
@@ -78,6 +84,10 @@ const currentRowsNumber = ref('')
   width: 40px; 
   height: 40px;
   background: rgba(234, 243, 244, 1);
+  &[data-p-active=true] {
+    background: rgba(113, 175, 182, 1);
+    color: white;
+  }
 }
 .d-none {
   display: none;
@@ -99,9 +109,7 @@ const currentRowsNumber = ref('')
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
 }
-.current-active {
-  background: green;
-}
+
 .content-end {
   width: fit-content;
   margin-left: auto;
