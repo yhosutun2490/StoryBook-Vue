@@ -1,6 +1,6 @@
 {
   "name": "custom-ui-library",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "custom-ui-library",
   "private": false,
   "type": "module",
