@@ -20,9 +20,8 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: |
-          echo @yhosutun2490:https://npm.pkg.github.com/ > dist/.npmrc
-          echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> dist/.npmrc
+          echo @yhosutun2490:https://npm.pkg.github.com/ > .npmrc
+          echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> .npmrc
       - run: npm publish
-        working-directory: ./dist
         env:
           NPM_TOKEN: ${{ secrets.UI }}
