@@ -3,6 +3,16 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "files": ["dist"],
+  "main": "./dist/custom-primevue-lib.umd.cjs",
+  "module": "./dist/custom-primevue-lib.js",
+  "exports": {
+    ".": {
+      "import": "./dist/custom-primevue-lib.js",
+      "require": "./dist/custom-primevue-lib.umd.cjs"
+    },
+    "./style.css": "./dist/style.css"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -49,3 +59,6 @@
     ]
   }
 }
+
+
+
