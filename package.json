@@ -1,9 +1,11 @@
 {
-  "name": "storybook",
-  "version": "0.0.0",
+  "name": "custom-ui-library",
+  "version": "0.0.1",
   "private": true,
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/custom-primevue-lib.umd.cjs",
   "module": "./dist/custom-primevue-lib.js",
   "exports": {
@@ -20,7 +22,8 @@
     "lint": "eslint . --fix",
     "format": "prettier --write src/",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "release": "standard-version && git push --follow-tags && npm publish"
   },
   "dependencies": {
     "@primevue/auto-import-resolver": "^4.1.1",
@@ -51,6 +54,7 @@
     "prettier": "^3.3.3",
     "sass-embedded": "^1.80.4",
     "sass-loader": "^16.0.2",
+    "standard-version": "^9.5.0",
     "storybook": "^8.3.6",
     "vite": "^5.4.10",
     "vite-plugin-vue-devtools": "^7.5.3"
@@ -61,6 +65,3 @@
     ]
   }
 }
-
-
-
