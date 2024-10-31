@@ -1,7 +1,8 @@
 {
   "name": "custom-ui-library",
-  "version": "0.0.1",
-  "private": true,
+  "version": "0.0.2",
+  "description": "custom-ui-library",
+  "private": false,
   "type": "module",
   "files": [
     "dist"
