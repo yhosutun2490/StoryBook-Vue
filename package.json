@@ -7,15 +7,18 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/custom-primevue-lib.umd.cjs",
-  "module": "./dist/custom-primevue-lib.js",
+  "main": "./dist/custom-primevue-lib.cjs.js",
+  "module": "./dist/custom-primevue-lib.es.js",
   "exports": {
     ".": {
-      "import": "./dist/custom-primevue-lib.js",
-      "require": "./dist/custom-primevue-lib.umd.cjs"
+      "import": "./dist/custom-primevue-lib.cjs.js",
+      "require": "./dist/custom-primevue-lib.es.js"
     },
     "./style.css": "./dist/style.css"
   },
+  "publishConfig": {
+  "registry": "https://npm.pkg.github.com"
+},
   "scripts": {
     "dev": "vite",
     "build": "vite build",
