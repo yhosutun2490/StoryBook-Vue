@@ -22,7 +22,6 @@ jobs:
       - run: |
           echo @yhosutun2490:https://npm.pkg.github.com/ > .npmrc
           echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> .npmrc
-      - run: npm run standard-version
-      - run: npm publish
+      - run: npm standard-version && publish
         env:
           NPM_TOKEN: ${{ secrets.UI }}
