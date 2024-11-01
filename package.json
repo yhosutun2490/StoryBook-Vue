@@ -1,6 +1,6 @@
 {
   "name": "@yhosutun2490/custom-ui-library ",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "custom-ui-library",
   "private": false,
   "type": "module",
@@ -11,8 +11,8 @@
   "module": "./dist/custom-primevue-lib.es.js",
   "exports": {
     ".": {
-      "import": "./dist/custom-primevue-lib.cjs.js",
-      "require": "./dist/custom-primevue-lib.es.js"
+      "import": "./dist/custom-primevue-lib.es.js",
+      "require": "./dist/custom-primevue-lib.cjs.js"
     },
     "./style.css": "./dist/style.css"
   },
