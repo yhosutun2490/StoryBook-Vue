@@ -3,4 +3,5 @@ import Paginator from "./components/Paginator/Paginator.vue"
 export function install(app) {
   app.component("Paginator-Custom", Paginator);
 }
+export default install
 export {Paginator}
