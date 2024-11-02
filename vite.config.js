@@ -41,6 +41,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
+      'primevue': 'primevue/es', // 確保使用 ES 模組版本
     }
   },
 })
