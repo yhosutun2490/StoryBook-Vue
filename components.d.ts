@@ -16,6 +16,7 @@ declare module 'vue' {
     IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
     MyButton: typeof import('./src/components/MyButton/MyButton.vue')['default']
     Paginator: typeof import('./src/components/Paginator/Paginator.vue')['default']
+    PrimePaginator: typeof import('./src/components/PrimePaginator/PrimePaginator.vue')['default']
     Task: typeof import('./src/components/Task/Task.vue')['default']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
     WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
