@@ -1,7 +1,11 @@
 import Paginator from "./components/Paginator/Paginator.vue"
+import PrimeVue from "primevue/config";
 // 添加 install 方法
-export function install(app) {
-  app.component("Paginator-Custom", Paginator);
+export default  {
+  install: (app)=> {
+    app.use(PrimeVue,{ unstyled: true })
+    app.component("CustomPaginator", Paginator);
+  }
 }
-export default install
+
 export {Paginator}

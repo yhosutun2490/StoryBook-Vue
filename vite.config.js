@@ -31,12 +31,10 @@ export default defineConfig({
   rollupOptions: {
     // make sure to externalize deps that shouldn't be bundled
     // into your library
-    external: ['vue', 'primevue/config', 'primevue/paginator'],
+    external: ['vue', 'primevue'],
     output: {
       globals: {
         vue: 'Vue',
-        'primevue/config': 'PrimeVueConfig',
-        'primevue/paginator': 'Paginator'
       }
     }
   },
