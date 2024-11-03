@@ -20,8 +20,6 @@ jobs:
       - run: npm install
       - run: npm run build
       - run: |
-          echo @yhosutun2490:https://npm.pkg.github.com/ > .npmrc
-          echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' > .npmrc
+        echo "@yhostun2490:registry=https://npm.pkg.github.com/" > .npmrc
+        echo "//npm.pkg.github.com/:_authToken=${secrets.UI}" >> .npmrc
       - run: npm publish
-        env:
-          NPM_TOKEN: ${{ secrets.UI }}
