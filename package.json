@@ -1,18 +1,18 @@
 {
   "name": "@yhosutun2490/custom-ui-library",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "custom-ui-library",
   "private": false,
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/custom-primevue-lib.cjs.js",
-  "module": "./dist/custom-primevue-lib.es.js",
+  "main": "./dist/custom-ui-lib.cjs.js",
+  "module": "./dist/custom-ui-lib.es.js",
   "exports": {
     ".": {
-      "import": "./dist/custom-primevue-lib.es.js",
-      "require": "./dist/custom-primevue-lib.cjs.js"
+      "import": "./dist/custom-ui-lib.es.js",
+      "require": "./dist/custom-ui-lib.cjs.js"
     },
     "./style.css": "./dist/style.css"
   },
@@ -36,10 +36,10 @@
     "add": "^2.0.6",
     "unplugin-vue-components": "^0.27.4",
     "vite-plugin-vuetify": "^2.0.4",
-    "vuetify": "^3.7.3"
+    "vuetify": "^3.7.3",
+    "primevue": "^4.1.1"
   },
   "peerDependencies": {
-    "primevue": "^4.1.1",
     "vue": "^3.5.12"
   },
   "devDependencies": {

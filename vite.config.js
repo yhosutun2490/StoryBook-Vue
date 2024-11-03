@@ -27,14 +27,14 @@ export default defineConfig({
   // 可以多個元件進入打包和匯出模組
   build: {
     lib: {
-      // Could also be a dictionary or array of multiple entry points
-      entry: resolve(__dirname,'src/primevue.js'),
-      name: 'custom-primevue-lib',
-      formats: ['es','cjs'] , // 模組的種類 JS es module/common js
-      // the proper extensions will be added
-      fileName: (format)=>`custom-primevue-lib.${format}.js`,},
+      entry: {
+        combined: resolve(__dirname, 'src/combined.js') // 合併打包
+      },
+      name: 'custom-ui-lib',
+      formats: ['es', 'cjs'],
+      fileName: (format) => `custom-ui-lib.${format}.js`
+    },
   },
-
 
   rollupOptions: {
     // make sure to externalize deps that shouldn't be bundled
