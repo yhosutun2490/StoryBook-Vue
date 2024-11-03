@@ -1,6 +1,6 @@
 {
   "name": "@yhosutun2490/custom-ui-library",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "custom-ui-library",
   "private": false,
   "type": "module",
@@ -13,6 +13,14 @@
     ".": {
       "import": "./dist/custom-ui-lib.es.js",
       "require": "./dist/custom-ui-lib.cjs.js"
+    },
+    "./primevue": {
+      "import": "./dist/primevue.es.js",
+      "require": "./dist/primevue.cjs.js"
+    },
+    "./vuetify": {
+      "import": "./dist/vuetify.es.js",
+      "require": "./dist/vuetify.cjs.js"
     },
     "./style.css": "./dist/style.css"
   },
@@ -33,11 +41,12 @@
     "@mdi/font": "^7.4.47",
     "@primevue/auto-import-resolver": "^4.1.1",
     "@primevue/themes": "^4.1.1",
+    "@yhosutun2490/custom-ui-library": "^0.1.6",
     "add": "^2.0.6",
+    "primevue": "^4.1.1",
     "unplugin-vue-components": "^0.27.4",
     "vite-plugin-vuetify": "^2.0.4",
-    "vuetify": "^3.7.3",
-    "primevue": "^4.1.1"
+    "vuetify": "^3.7.3"
   },
   "peerDependencies": {
     "vue": "^3.5.12"

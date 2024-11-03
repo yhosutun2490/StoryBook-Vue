@@ -25,15 +25,42 @@ export default defineConfig({
       }),
   ],
   // 可以多個元件進入打包和匯出模組
+  // build: {
+  //   lib: {
+  //     entry: {
+  //       combined: resolve(__dirname, 'src/combined.js') // 合併打包
+  //     },
+  //     name: 'custom-ui-lib',
+  //     formats: ['es', 'cjs'],
+  //     fileName: (format) => `custom-ui-lib.${format}.js`
+  //   },
+  // },
   build: {
+    rollupOptions: {
+      input: {
+        primevue: resolve(__dirname, 'src/primevue.js'),
+        vuetify: resolve(__dirname, 'src/vuetify.js')
+      },
+      output: [
+        {
+          format: 'es',
+          dir: 'dist',
+          entryFileNames: '[name].es.js'
+        },
+        {
+          format: 'cjs',
+          dir: 'dist',
+          entryFileNames: '[name].cjs.js'
+        }
+      ]
+    },
     lib: {
       entry: {
         combined: resolve(__dirname, 'src/combined.js') // 合併打包
       },
-      name: 'custom-ui-lib',
       formats: ['es', 'cjs'],
-      fileName: (format) => `custom-ui-lib.${format}.js`
-    },
+      fileName: (format) => `combined-lib.${format}.js`
+    }
   },
 
   rollupOptions: {
