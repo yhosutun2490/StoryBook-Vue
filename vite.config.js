@@ -38,6 +38,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
+        combined: resolve(__dirname, 'src/combined.js'),
         primevue: resolve(__dirname, 'src/primevue.js'),
         vuetify: resolve(__dirname, 'src/vuetify.js')
       },
@@ -54,13 +55,13 @@ export default defineConfig({
         }
       ]
     },
-    lib: {
-      entry: {
-        combined: resolve(__dirname, 'src/combined.js') // 合併打包
-      },
-      formats: ['es', 'cjs'],
-      fileName: (format) => `combined-lib.${format}.js`
-    }
+    // lib: {
+    //   entry: {
+    //     combined: resolve(__dirname, 'src/combined.js') // 合併打包
+    //   },
+    //   formats: ['es', 'cjs'],
+    //   fileName: (format) => `combined-lib.${format}.js`
+    // }
   },
 
   rollupOptions: {

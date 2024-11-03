@@ -7,12 +7,12 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/custom-ui-lib.cjs.js",
-  "module": "./dist/custom-ui-lib.es.js",
+  "main": "./dist/combined.js",
+  "module": "./dist/combined.es.js",
   "exports": {
     ".": {
-      "import": "./dist/custom-ui-lib.es.js",
-      "require": "./dist/custom-ui-lib.cjs.js"
+      "import": "./dist/combined.es.js",
+      "require": "./dist/combined.cjs.js"
     },
     "./primevue": {
       "import": "./dist/primevue.es.js",
