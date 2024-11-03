@@ -19,6 +19,8 @@ declare module 'vue' {
     PrimePaginator: typeof import('./src/components/PrimePaginator/PrimePaginator.vue')['default']
     Task: typeof import('./src/components/Task/Task.vue')['default']
     TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
+    VuetiFy: typeof import('./src/components/VuetiFy/VuetiFyPaginator.vue')['default']
+    VuetiFyPaginator: typeof import('./src/components/VuetiFy/VuetiFyPaginator.vue')['default']
     WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@yhosutun2490/custom-ui-library",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "custom-ui-library",
   "private": false,
   "type": "module",
@@ -30,13 +30,17 @@
     "release": "standard-version && git push --follow-tags && npm publish"
   },
   "dependencies": {
+    "@mdi/font": "^7.4.47",
     "@primevue/auto-import-resolver": "^4.1.1",
     "@primevue/themes": "^4.1.1",
-    "unplugin-vue-components": "^0.27.4"
+    "add": "^2.0.6",
+    "unplugin-vue-components": "^0.27.4",
+    "vite-plugin-vuetify": "^2.0.4",
+    "vuetify": "^3.7.3"
   },
   "peerDependencies": {
-    "vue": "^3.5.12",
-    "primevue": "^4.1.1"
+    "primevue": "^4.1.1",
+    "vue": "^3.5.12"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.9.0",
