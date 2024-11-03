@@ -36,32 +36,32 @@ export default defineConfig({
   //   },
   // },
   build: {
-    rollupOptions: {
-      input: {
-        combined: resolve(__dirname, 'src/combined.js'),
-        primevue: resolve(__dirname, 'src/primevue.js'),
-        vuetify: resolve(__dirname, 'src/vuetify.js')
-      },
-      output: [
-        {
-          format: 'es',
-          dir: 'dist',
-          entryFileNames: '[name].es.js'
-        },
-        {
-          format: 'cjs',
-          dir: 'dist',
-          entryFileNames: '[name].cjs.js'
-        }
-      ]
-    },
-    // lib: {
-    //   entry: {
-    //     combined: resolve(__dirname, 'src/combined.js') // 合併打包
+    // rollupOptions: {
+    //   input: {
+    //     combined: resolve(__dirname, 'src/combined.js'),
+    //     primevue: resolve(__dirname, 'src/primevue.js'),
+    //     vuetify: resolve(__dirname, 'src/vuetify.js')
     //   },
-    //   formats: ['es', 'cjs'],
-    //   fileName: (format) => `combined-lib.${format}.js`
-    // }
+    //   output: [
+    //     {
+    //       format: 'es',
+    //       dir: 'dist',
+    //       entryFileNames: '[name].es.js'
+    //     },
+    //     {
+    //       format: 'cjs',
+    //       dir: 'dist',
+    //       entryFileNames: '[name].cjs.js'
+    //     }
+    //   ]
+    // },
+    lib: {
+      entry: {
+        combined: resolve(__dirname, 'src/combined.js') // 合併打包
+      },
+      formats: ['es', 'cjs'],
+      fileName: (format) => `combined-lib.${format}.js`
+    }
   },
 
   rollupOptions: {
