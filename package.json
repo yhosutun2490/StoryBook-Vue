@@ -14,14 +14,6 @@
       "import": "./dist/combined.es.js",
       "require": "./dist/combined.cjs.js"
     },
-    "./primevue": {
-      "import": "./dist/primevue.es.js",
-      "require": "./dist/primevue.cjs.js"
-    },
-    "./vuetify": {
-      "import": "./dist/vuetify.es.js",
-      "require": "./dist/vuetify.cjs.js"
-    },
     "./style.css": "./dist/style.css"
   },
   "publishConfig": {
