@@ -1,13 +1,13 @@
 {
   "name": "@yhosutun2490/custom-ui-library",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "custom-ui-library",
   "private": false,
   "type": "module",
   "files": [
     "dist"
   ],
-  "main": "./dist/combined.js",
+  "main": "./dist/combined.cjs.js",
   "module": "./dist/combined.es.js",
   "exports": {
     ".": {
