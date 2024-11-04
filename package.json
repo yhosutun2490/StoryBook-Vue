@@ -7,12 +7,12 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/combined.cjs.js",
-  "module": "./dist/combined.es.js",
+  "main": "./dist/combined-lib.cjs.js",
+  "module": "./dist/combined-lib.es.js",
   "exports": {
     ".": {
-      "import": "./dist/combined.es.js",
-      "require": "./dist/combined.cjs.js"
+      "import": "./dist/combined-lib.es.js",
+      "require": "./dist/combined-lib.cjs.js"
     },
     "./style.css": "./dist/style.css"
   },
