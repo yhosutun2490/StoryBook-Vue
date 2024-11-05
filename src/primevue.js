@@ -13,4 +13,4 @@ export default  {
   }
 }
 
-export {Paginator,MyButton,PrimePaginator}
+export {PrimeVue,Paginator,MyButton,PrimePaginator}

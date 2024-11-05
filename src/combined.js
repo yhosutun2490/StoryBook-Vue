@@ -1,4 +1,4 @@
-import * as PrimeVue from './primevue';
+import {PrimeVue,Paginator,PrimePaginator, MyButton} from './primevue';
 import * as Vuetify from './vuetify';
 
 function install(app) {
@@ -12,4 +12,4 @@ function install(app) {
 }
 
 // 將 `install` 方法添加到 default export 中
-export default { install, PrimeVue, Vuetify };
+export default { install, Paginator,PrimePaginator, MyButton};
