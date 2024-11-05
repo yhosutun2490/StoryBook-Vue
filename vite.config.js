@@ -61,19 +61,20 @@ export default defineConfig({
       },
       formats: ['es', 'cjs'],
       fileName: (format) => `combined-lib.${format}.js`
-    }
+    },
+    rollupOptions: {
+      // make sure to externalize deps that shouldn't be bundled
+      // into your library
+      external: ['vue', 'primevue'],
+      output: {
+        globals: {
+          vue: 'Vue',
+        }
+      }
+    },
   },
 
-  rollupOptions: {
-    // make sure to externalize deps that shouldn't be bundled
-    // into your library
-    external: ['vue', 'primevue'],
-    output: {
-      globals: {
-        vue: 'Vue',
-      }
-    }
-  },
+
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
